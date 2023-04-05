@@ -5,15 +5,23 @@
 </head>
 <body>
 	<form action="{{ url_for('predict') }}" method="POST">
-		Age: <input type="text" name="age"><br>
-		Education: <input type="text" name="education"><br>
-		SES: <input type="text" name="ses"><br>
-		MMSE: <input type="text" name="mmse"><br>
-		CDR: <input type="text" name="cdr"><br>
-		eTIV: <input type="text" name="etiv"><br>
-		nWBV: <input type="text" name="nwbv"><br>
-		ASF: <input type="text" name="asf"><br>
-		<input type="submit" value="Predict">
+    	<label>Age:</label><br>
+		<input type="text" name="age" style="width: 200px;"><br>
+		<label>Education:</label><br>
+		<input type="text" name="education" style="width: 200px;"><br>
+		<label>SES:</label><br>
+		<input type="text" name="ses" style="width: 200px;"><br>
+		<label>MMSE:</label><br>
+		<input type="text" name="mmse" style="width: 200px;"><br>
+		<label>CDR:</label><br>
+		<input type="text" name="cdr" style="width: 200px;"><br>
+		<label>eTIV:</label><br>
+		<input type="text" name="etiv" style="width: 200px;"><br>
+		<label>nWBV:</label><br>
+		<input type="text" name="nwbv" style="width: 200px;"><br>
+		<label>ASF:</label><br>
+		<input type="text" name="asf" style="width: 200px;"><br><br>
+		<input type="submit" value="Predict" style="border-radius:10px; background-color:lightgreen;">
 	</form>
 	{% if prediction_text %}
 		<h2>{{ prediction_text }}</h2>
