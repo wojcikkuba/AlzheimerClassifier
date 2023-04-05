@@ -4,6 +4,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.svm import SVC
 from sklearn import metrics
 from sklearn.preprocessing import StandardScaler
+from sklearn.decomposition import PCA
 
 # Importing the dataset
 df = pd.read_csv('alzheimer.csv')
@@ -29,11 +30,17 @@ scaler = StandardScaler()
 X_train = scaler.fit_transform(X_train)
 X_test = scaler.fit_transform(X_test)
 
-classifier = SVC(kernel = 'linear')
-classifier.fit(X_train, y_train)
+# Applying PCA
+pca = PCA(n_components=4)
+X_train_pca = pca.fit_transform(X_train)
+X_test_pca = pca.transform(X_test)
 
-# Predicting the test set result
-y_pred = classifier.predict(X_test)
-print('Accuracy score with default linear kernel:')
-print(metrics.accuracy_score(y_test, y_pred))
+# Training SVM with PCA data
+classifier = SVC(kernel = 'linear')
+classifier.fit(X_train_pca, y_train)
+
+# Predicting the test set result with PCA data
+y_pred_pca = classifier.predict(X_test_pca)
+print('Accuracy score with default linear kernel and PCA:')
+print(metrics.accuracy_score(y_test, y_pred_pca))
 
