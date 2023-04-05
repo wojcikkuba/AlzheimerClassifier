@@ -1,3 +1,4 @@
+from flask import Flask, render_template, request
 import numpy as np
 import pandas as pd
 from sklearn.model_selection import train_test_split
@@ -44,3 +45,21 @@ y_pred_pca = classifier.predict(X_test_pca)
 print('Accuracy score with default linear kernel and PCA:')
 print(metrics.accuracy_score(y_test, y_pred_pca))
 
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return render_template('home.html')
+
+@app.route('/predict', methods=['POST'])
+def predict():
+    float_features = [float(x) for x in request.form.values()]
+    final_features = np.array(float_features)
+    prediction_input = scaler.transform([final_features])
+    prediction_input_pca = pca.transform(prediction_input)
+    prediction = classifier.predict(prediction_input_pca)
+    output = int(prediction[0])
+    return render_template('home.html', prediction_text='Class prediction: {}'.format(output))
+
+if __name__ == '__main__':
+    app.run(debug=True)
