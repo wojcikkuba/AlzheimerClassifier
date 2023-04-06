@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Prediction Page</title>
+</head>
+<body>
+	<form class="form-horizontal" action="{{ url_for('predict') }}" method="POST">
+    <div class="form-group">
+        <label for="age" class="col-sm-2 control-label">Age:</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="age" name="age" placeholder="Enter Age">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="education" class="col-sm-2 control-label">Education:</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="education" name="education" placeholder="Enter Education">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="ses" class="col-sm-2 control-label">SES:</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="ses" name="ses" placeholder="Enter SES">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="mmse" class="col-sm-2 control-label">MMSE:</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="mmse" name="mmse" placeholder="Enter MMSE">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="cdr" class="col-sm-2 control-label">CDR:</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="cdr" name="cdr" placeholder="Enter CDR">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="etiv" class="col-sm-2 control-label">eTIV:</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="etiv" name="etiv" placeholder="Enter eTIV">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="nwbv" class="col-sm-2 control-label">nWBV:</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="nwbv" name="nwbv" placeholder="Enter nWBV">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="asf" class="col-sm-2 control-label">ASF:</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="asf" name="asf" placeholder="Enter ASF">
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-primary">Predict</button>
+        </div>
+        </div>
+        </form>
+	{% if prediction_text %}
+		<h2>{{ prediction_text }}</h2>
+	{% endif %}
+	0 - nodemented
+	1 - demented
+</body>
+</html>
