@@ -1,0 +1,8 @@
+.container {
+    display: flex;
+}
+
+form, .additional-info {
+    display: inline-block;
+    margin-right: 10%;
+}
