@@ -9,3 +9,5 @@ To run the classifier, you will need Python 3.x and the following Python package
 - pandas
 - numpy
 - sklearn
+
+<a href="https://wojcikkuba.github.io/AlzheimerClassifier/templates/index.html">Form</a>
