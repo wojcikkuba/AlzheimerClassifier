@@ -5,7 +5,7 @@ The classifier uses machine learning techniques (**SVM**, **PCA**) to predict wh
 based on various features extracted from clincal data, such as the volume of different brain regions and clinical dementia rating.
 
 Added (very) simple Flask interface for easy to use GUI. To run the Flask interface, make sure to install the Flask package and run the **`app.py`** file and then go to
-`https//:127.0.0.1:5000`
+`https://127.0.0.1:5000`
 
 # Requirements
 To run the classifier, you will need Python 3.x and the following Python packages:
