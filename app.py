@@ -49,7 +49,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return render_template('home.html')
+    return render_template('index.html')
 
 @app.route('/predict', methods=['POST'])
 def predict():
@@ -59,7 +59,7 @@ def predict():
     prediction_input_pca = pca.transform(prediction_input)
     prediction = classifier.predict(prediction_input_pca)
     output = int(prediction[0])
-    return render_template('home.html', prediction_text='Class prediction: {}'.format(output))
+    return render_template('index.html', prediction_text='Class prediction: {}'.format(output))
 
 if __name__ == '__main__':
     app.run(debug=True)
