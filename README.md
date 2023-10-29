@@ -4,15 +4,14 @@ Python project for classification of Alzheimer's disease using SVM
 The classifier uses machine learning techniques (**SVM**, **PCA**) to predict whether a patient has Alzheimer's disease or not
 based on various features extracted from clincal data, such as the volume of different brain regions and clinical dementia rating.
 
-Added (very) simple Flask interface for easy to use GUI. To run the Flask interface, make sure to install the Flask package and run the **`app.py`** file and then go to
-`https://127.0.0.1:5000`
+Added simple Flask interface for easy to use GUI. 
 
-# Requirements
-To run the classifier, you will need Python 3.x and the following Python packages:
-- pandas
-- numpy
-- sklearn
-- Flask
+**To run the app:**
 
-# Demo
-<a data-flickr-embed="true" href="https://www.flickr.com/photos/198045764@N02/52797804023/in/dateposted-public/" title="AlzheimerClassifier"><img src="https://live.staticflickr.com/65535/52797804023_15f92bedfe_z.jpg" width="640" height="554" alt="AlzheimerClassifier"/></a>
+1. Build the Docker image:
+   `docker build -t alzheimer-classifier .`
+
+2. Run the container:
+   `docker run -p 5000:5000 alzheimer-classifier`
+
+The application will be available at `localhost:5000`
