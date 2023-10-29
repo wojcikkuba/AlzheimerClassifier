@@ -5,6 +5,8 @@ from sklearn.svm import SVC
 from sklearn.preprocessing import StandardScaler
 from sklearn.decomposition import PCA
 
+pd.options.mode.chained_assignment = None
+
 # Importing the dataset
 df = pd.read_csv('alzheimer.csv')
 
